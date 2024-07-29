@@ -1,4 +1,6 @@
 export default [
+
+  
     {
       path: '/',
       redirect: '/home',
@@ -9,15 +11,31 @@ export default [
       component: './Home',
     },
     {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
+      path: '/user',
+      layout: false,
+      routes: [
+        {
+          path: '/user/login',
+          layout: false,
+          name: 'login',
+          component: './User/Login',
+        },
+        {
+          path: '/user',
+          redirect: '/user/login',
+        },
+       
+      ],
     },
+
     {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
+      name: '个人中心',
+      path: '/user/profile',
+      component: './User/PersonalCenter',
+      hideInMenu: true,
+      icon: 'user',
     },
+  
 
     {
       name: '系统管理',

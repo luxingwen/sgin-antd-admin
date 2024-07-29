@@ -21,6 +21,7 @@ const SysOpLogManagement = () => {
     { title: '请求IP', dataIndex: 'ip', key: 'ip' },
     { title: '状态', dataIndex: 'code', key: 'code', hideInSearch: true, render: (status) => renderStatus(status) },
     { title: '消息', dataIndex: 'message', key: 'message', hideInSearch: true },
+    { title: '请求Id', dataIndex: 'request_id', key: 'request_id', hideInSearch: true },
     { title: '请求参数', dataIndex: 'params', key: 'params', hideInSearch: true },
     { title: '请求耗时(毫秒)', dataIndex: 'duration', key: 'duration', hideInSearch: true },
     { title: '创建时间', dataIndex: 'created_at', key: 'created_at', hideInSearch: true },
