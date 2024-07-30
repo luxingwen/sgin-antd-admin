@@ -15,9 +15,11 @@ import {
 } from 'antd';
 import { useRef, useState } from 'react';
 import { PageContainer } from '@ant-design/pro-components';
+import { history } from '@umijs/max';
 
 const { Option } = Select;
 const { Text } = Typography;
+
 
 const UserManagement = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -162,6 +164,10 @@ const UserManagement = () => {
     }
   };
 
+  const handleBindPermissions = (record) => {
+    history.push(`/system/user/permission/${record.uuid}`);
+  };
+
   const columns = [
     { title: 'ID', dataIndex: 'id', key: 'id', hideInSearch: true },
     { title: 'UUID', dataIndex: 'uuid', key: 'uuid', width: 300,  },
@@ -201,6 +207,7 @@ const UserManagement = () => {
             cancelText="否"
           >
             <Button icon={<DeleteOutlined />} danger />
+            <Button onClick={() => handleBindPermissions(record)} style={{ marginLeft: 8 }}> 授权 </Button>
           </Popconfirm>
         </span>
       ),

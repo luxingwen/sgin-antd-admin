@@ -43,9 +43,43 @@ export default [
       icon: 'setting',
       routes: [
         {
+          name: '用户管理',
+          path: '/system/user',
+          component: './User/Manager',
+        },
+        {
+          name: '用户授权',
+          path: '/system/user/permission/:userId',
+          component: './User/BindPermission',
+          hideInMenu: true,
+        },
+        {
+          name: '团队管理',
+          path: '/system/team',
+          component: './Team',
+        },
+        {
+          name: '团队成员管理',
+          path: '/system/team/member/:teamId',
+          component: './Team/Member',
+          hideInMenu: true,
+        },
+        {
+          name: '团队角色',
+          path: '/system/team/role/:teamId',
+          component: './Team/Role',
+          hideInMenu: true,
+        },
+        {
           name: '菜单管理',
           path: '/system/menu',
           component: './Sys/Menu',
+        },
+        {
+          name: '菜单管理（绑定api）',
+          path: '/system/menu/bindapi/:menuId',
+          component: './Sys/Menu/BindApi',
+          hideInMenu: true,
         },
         {
           name: '登录日志',
@@ -61,6 +95,17 @@ export default [
           name: 'API管理',
           path: '/system/api',
           component: './Sys/Api',
+        },
+        {
+          name: '权限管理',
+          path: '/system/permission',
+          component: './Sys/Permission',
+        },
+        {
+          name: '权限管理(绑定菜单)',
+          hideInMenu: true,
+          path: '/system/permission/menu/:permissionId',
+          component: './Sys/Permission/BindMenu',
         },
       ],
     },
